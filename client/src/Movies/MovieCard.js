@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie, detail }) => {
+const MovieCard = ({ movie, detail, saveMovie }) => {
   const { title, director, metascore, stars } = movie;
   return (
     <div className='save-wrapper'>
@@ -23,7 +23,9 @@ const MovieCard = ({ movie, detail }) => {
           ))}
       </div>
       {detail ? (
-        <div className='save-button'>Save</div>
+        <button onClick={() => saveMovie(movie)} className='save-button'>
+          Save
+        </button>
       ) : (
         <Link className='save-button' to={`/movies/${movie.id}`}>
           Details

@@ -21,16 +21,17 @@ const Movie = props => {
   }, [props.match.params.id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  console.log(props);
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie);
+  };
 
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
 
-  return <MovieCard movie={movie} detail />;
+  return <MovieCard movie={movie} detail saveMovie={saveMovie} />;
 };
 
 export default Movie;
