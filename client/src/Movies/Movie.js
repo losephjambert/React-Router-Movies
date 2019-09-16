@@ -21,7 +21,6 @@ const Movie = props => {
   }, [props.match.params.id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  console.log(props);
   const saveMovie = () => {
     const addToSavedList = props.addToSavedList;
     addToSavedList(movie);
